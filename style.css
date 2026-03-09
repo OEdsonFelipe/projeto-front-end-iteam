@@ -1,76 +1,111 @@
-.container {
-    background-color: #AEB784;
-    border-radius: 10px;
-    padding: 100px;
-    text-align: center;
-    width: 300px;
-    max-width: 100%;
-}
-.profile {
-width: 200px;
-height: 200px;
-border-radius: 50%;
-object-fit: cover;
-border:2px solid #ffffff;
-margin:0px 50px;
-}
-.link-istagram{
-  display: flex;
-  align-items: center;  
-  background-color: #41431B;
-  justify-content: center;
-  padding: 5px 10px;
-  border-radius: 5px;
-  margin: 20px 0;
-  text-decoration: none;
-}
-.link-linkedin{
-  display: flex;
-  align-items: center;  
-  background-color: #41431B;
-  justify-content: center;
-  padding: 5px 10px;
-  border-radius: 5px;
-  margin: 20px 0;
-  text-decoration: none;
-}
-.link-github{
-  display: flex;
-  align-items: center;  
-  background-color: #41431B;
-  justify-content: center;
-  padding: 5px 10px;
-  border-radius: 5px;
-  margin: 20px 0;
-  text-decoration: none;
-}
-.link-whatsapp{
-  display: flex;
-  align-items: center;  
-  background-color: #41431B;
-  justify-content: center;
-  padding: 5px 10px;
-  border-radius: 5px;
-  margin: 20px 0;
-  text-decoration: none;
-}
-.sub-title{
-    margin-bottom: 10px;
-}
-p{
-    color: #E3DBBB;
-}
-
-body {
-    background-color: #41431B;
-    color: #41431B;
-    font-family: "Righteous", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+.container{
+    display: none;
+    width: 100%;
     height: 100vh;
-    margin: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: var(--background);
+}
 
+.container.active{
+    display: block;
+}
+
+/* TÍTULO PRINCIPAL */
+.container .titulo{
+    font-size: 4rem;
+    color: #ffffff;
+    font-family: "Righteous", sans-serif;
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* SUBTITULO */
+.container .sub-title{
+    width: 60%;
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* FOTO PERFIL */
+.container .profile{
+    width: 200px;
+    border-radius: 50%;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* PAGINAS */
+.pagegit, .pagelinkedin{
+    font-size: 3rem;
+    font-family: "Righteous", sans-serif;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ICONES */
+.container img{
+    width: 120px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* BOTÕES */
+#prev, #next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #eee9;
+    border: 1px solid #eee9;
+    color: #eee;
+    font-size: x-large;
+    font-family: monospace;
+    cursor: pointer;
+    z-index: 4;
+    border-radius: 50%;
+}
+
+#prev{
+    left: 30px;
+}
+
+#next{
+    right: 30px;
+}
+
+/* ANIMAÇÃO */
+@keyframes toActive {
+    from{
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+/* ANIMAÇÃO DO TITULO */
+.container.active .titulo{
+    animation: toActive 0.5s ease-in-out 1;
+}
+
+/* ANIMAÇÃO DA FOTO */
+.container.active img{
+    animation: toActive 0.5s ease-in-out 1;
 }
